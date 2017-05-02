@@ -1,6 +1,6 @@
 # rss-feed
 
-> Rss feed
+> News feed that takes the news from a couple of RSS sources (BBC,Reuters,Fox Sports,Tech Crunch,Yahoo)
 
 ## Build Setup
 
