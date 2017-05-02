@@ -3,13 +3,15 @@
  */
 import axios from 'axios';
 
+const FEED_URL = 'http://localhost:3000/feed';
+
 export default{
 
   /*
    Get nearby channels for user
    */
   getFeedFromServer({ commit }) {
-    axios.get('http://localhost:3000/feed').then((response) => {
+    axios.get(FEED_URL).then((response) => {
       const feed = response.data || [];
       commit('setFeed', feed);
       return feed;

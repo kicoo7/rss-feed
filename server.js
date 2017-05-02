@@ -116,12 +116,17 @@ app.get('/feed', (req, res) => {
 app.use(express.static('dist'));
 app.use(express.static('static'));
 
+//Serve files if NODE_ENV is set to production
+if (process.env.NODE_ENV === 'production') {
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+  });
+}
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+const port = (process.env.NODE_ENV === 'production' ? 8080 : 3000);
+
+app.listen(port, () => {
+  console.log(`RSS feed server is  listening on port ${port}`);
 });
 
