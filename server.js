@@ -124,9 +124,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const port = 8080;
+const port = 8000;
 
 app.listen(port, () => {
+  console.log(`Environment set to ${process.env.NODE_ENV}`);
   console.log(`RSS feed server is  listening on port ${port}`);
 });
 
