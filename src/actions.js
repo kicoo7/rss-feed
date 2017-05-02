@@ -3,7 +3,7 @@
  */
 import axios from 'axios';
 
-const FEED_URL = 'http://localhost:3000/feed';
+const FEED_URL = '/feed';
 
 export default{
 

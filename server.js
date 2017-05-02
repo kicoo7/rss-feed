@@ -124,7 +124,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const port = (process.env.NODE_ENV === 'production' ? 8080 : 3000);
+const port = 8080;
 
 app.listen(port, () => {
   console.log(`RSS feed server is  listening on port ${port}`);
