@@ -2,6 +2,8 @@
 
 > News feed that takes the information from RSS sources (BBC,Reuters,Fox Sports,Tech Crunch,Yahoo)
 
+**[Demo](https://52.59.155.34:8000)**
+
 ## Build Setup
 
 ``` bash
