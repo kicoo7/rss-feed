@@ -8,6 +8,8 @@ const request = require('request'); // for fetching the feed
 const cors = require('cors');
 const lodash = require('lodash');
 
+const env = (process.env.NODE_ENV === 'production' ? 'production' : 'development');
+
 /**
  * RSS LINKS
  */
@@ -114,20 +116,17 @@ app.get('/feed', (req, res) => {
 //TODO save data to DB
 
 app.use(express.static('dist'));
-app.use(express.static('static'));
 
-//Serve files if NODE_ENV is set to production
-if (process.env.NODE_ENV === 'production') {
+if (env === 'production') {
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
   });
 }
 
-
 const port = 8000;
 
 app.listen(port, () => {
-  console.log(`Environment set to ${process.env.NODE_ENV}`);
+  console.log(`Environment set to ${env}`);
   console.log(`RSS feed server is  listening on port ${port}`);
 });
 
