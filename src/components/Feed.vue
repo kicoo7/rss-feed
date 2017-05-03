@@ -6,8 +6,8 @@
       <!--<button type="button" class="btn btn-default">Edit</button>-->
     </div>
     <ul v-if="getFeed.length>0" class="timeline">
-      <li v-for="post,index in getFeed"
-          :class="shouldBeInverted(index)"
+      <li v-for="(post,index) in getFeed"
+          :class="(post.isInverted ? 'timeline-inverted' : ' ')"
       >
         <div class="timeline-badge"><img style="height:100%;width: 100%;border-radius: 2em" :src="post.photo"></div>
         <div class="timeline-panel">
@@ -42,11 +42,6 @@
   import moment from 'moment';
 
   export default {
-    data() {
-      return {
-        inverted: false,
-      };
-    },
     computed: {
       ...mapGetters(['getFeed']),
     },
