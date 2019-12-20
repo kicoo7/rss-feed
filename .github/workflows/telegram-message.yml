@@ -14,7 +14,12 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          ‼️ <strong>REVIEW REQUESTED </strong> from 👀 ${{ github.event.pull_request.requested_reviewers[0].login }} ‼️
-          :checkered_flag: <a href="${{ github.event.pull_request.html_url }}">${{ github.event.pull_request.title}} - #${{ github.event.number }}] </a>
+          <h1> ‼️ REVIEW REQUESTED </strong> ‼️ </h1>
+          <h2> ${{ github.event.pull_request.requested_reviewers[0].login }} </h2>
+          
+          👀 <strong> #${{ github.event.number }} </strong>
+          
+          🏁 <a href="${{ github.event.pull_request.html_url }}"> ${{ github.event.pull_request.title}}</a>
+          
           📗 <strong> ${{ github.repository }} </strong>
         format: html
