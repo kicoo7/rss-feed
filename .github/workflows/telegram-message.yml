@@ -1,0 +1,16 @@
+name: telegram message
+on:
+  pull_request:
+    types: [review_requested]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        args: The ${{ github.event.pull_request.requested_reviewers[0].login }} is asked to review PR#${{ github.event.number }} on ${{ github.repository }} repository by ${{ github.actor }}.
