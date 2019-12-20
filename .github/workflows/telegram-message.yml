@@ -15,6 +15,6 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           <strong> ‼️ REVIEW REQUESTED ‼️ </strong> 
-          Hello 👩‍💻 <strong> @${{ github.event.pull_request.requested_reviewers[0].login }} </strong>, it's ME, Junior - your favourite 💖🤖 again. Please review 👀 PR #${{ github.event.number }} - ${{ github.event.pull_request.title}} in repo 📗 <strong> ${{ github.repository }} </strong>.
+          Hello 👩‍💻 <strong> @${{ github.event.pull_request.requested_reviewers[0].login }} </strong>, it's ME, <strong>Junior</strong> - your favourite 💖🤖 again. Please review 👀 <strong>PR #${{ github.event.number }} - ${{ github.event.pull_request.title}}</strong> in repo 📗 ${{ github.repository }}.
           <a href="${{ github.event.pull_request.html_url }}"></a>
         format: html
