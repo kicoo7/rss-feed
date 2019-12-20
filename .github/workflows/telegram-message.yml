@@ -13,4 +13,5 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: "‼️ REVIEW REQUESTED ‼️ \n **${{ github.event.pull_request.requested_reviewers[0].login }}** is asked to review 👀 [${{ github.event.pull_request.title}} - #${{ github.event.number }}](${{ github.event.pull_request.url }}) on ${{ github.repository }} repository by ${{ github.actor }}."
+        message: ‼️ REVIEW REQUESTED ‼️ \n **${{ github.event.pull_request.requested_reviewers[0].login }}** is asked to review 👀 [${{ github.event.pull_request.title}} - #${{ github.event.number }}](${{ github.event.pull_request.url }}) on ${{ github.repository }} repository by ${{ github.actor }}.
+        format: markdown
